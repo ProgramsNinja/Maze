@@ -10,7 +10,7 @@ namespace Library
     {
         private readonly Room room1;
         private readonly Room room2;
-        private readonly bool _isOpen;
+        public readonly bool _isOpen;
 
         public Door(Room room1, Room room2)
         {

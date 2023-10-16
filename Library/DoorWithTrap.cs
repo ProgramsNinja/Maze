@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Library
 {
-    internal class DoorWithTrap
+    public class DoorWithTrap : Door
     {
+        public DoorWithTrap(Room room1, Room room2) : base(room1, room2) { }
+
+        public  void Enter()
+        {
+            if (_isOpen)
+            {
+                Console.WriteLine("Мы вошли в дверь");
+            }
+        }
     }
 }
