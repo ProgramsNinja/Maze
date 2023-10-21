@@ -16,8 +16,6 @@ namespace Лаб1
             Room room2 = factory.CreateRoom(2);
             Door door = factory.CreateDoor(room1, room2);
 
-
-
             room1.SetSide(Direction.North, new Wall());
             room1.SetSide(Direction.East, door);
             room1.SetSide(Direction.South, new Wall());

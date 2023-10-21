@@ -10,7 +10,7 @@ namespace Library
     {
         private readonly Room room1;
         private readonly Room room2;
-        public readonly bool _isOpen;
+        public bool isOpen { get; private init; }
 
         public Door(Room room1, Room room2)
         {
@@ -19,12 +19,12 @@ namespace Library
 
             this.room1 = room1;
             this.room2 = room2;
-            _isOpen = true;
+            isOpen = true;
         }
 
         public void Enter()
         {
-            if (_isOpen)
+            if (isOpen)
             {
                 Console.WriteLine("Мы вошли в дверь");
             }

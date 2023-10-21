@@ -28,7 +28,6 @@ namespace Library
 
         public void SetSide(Direction direction, IMapSite side)
         {
-            ArgumentNullException.ThrowIfNull(side);
             Sides[(int)direction] = side;
         }
 

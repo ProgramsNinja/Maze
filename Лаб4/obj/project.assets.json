@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб2\\Лаб2.csproj",
-      "projectName": "Лаб2",
-      "projectPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб2\\Лаб2.csproj",
+      "projectUniqueName": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб4\\Лаб4.csproj",
+      "projectName": "Лаб4",
+      "projectPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб4\\Лаб4.csproj",
       "packagesPath": "C:\\Users\\dmitr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб2\\obj\\",
+      "outputPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб4\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
