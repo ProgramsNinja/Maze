@@ -22,6 +22,7 @@ namespace Лаб4
             }
             return new RoomWithBomb(number);
         }
+
         public ICloneablePrototype Clone() => (ICloneablePrototype)MemberwiseClone();
     }
 }

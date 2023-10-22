@@ -26,6 +26,7 @@ namespace Лаб4
 
             return new DoorWithTrap(room1, room2);
         }
+
         public ICloneablePrototype Clone() => (ICloneablePrototype)MemberwiseClone();
     }
 }
