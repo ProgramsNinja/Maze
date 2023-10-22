@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Лаб3
 {
-    public class MazeWithTrapGame:MazeGame
+    public class MazeWithTrapGame : MazeGame
     {
         public override Room CreateRoom(int number)
         {
@@ -20,10 +20,10 @@ namespace Лаб3
 
         public override Door CreateDoor(Room room1, Room room2)
         {
-            ArgumentNullException.ThrowIfNull(room1);    
-            ArgumentNullException.ThrowIfNull(room2); 
-            
-            return new DoorWithTrap(room1, room2);  
+            ArgumentNullException.ThrowIfNull(room1);
+            ArgumentNullException.ThrowIfNull(room2);
+
+            return new DoorWithTrap(room1, room2);
         }
     }
 }

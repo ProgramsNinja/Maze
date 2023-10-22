@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Лаб4
 {
-    public class MazeWithBombPrototype:MazeFactoryPrototype
+    public class MazeWithBombPrototype : MazeFactoryPrototype
     {
         public override Wall CreateWall()
         {

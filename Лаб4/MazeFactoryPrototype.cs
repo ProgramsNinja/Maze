@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Лаб4
 {
-    public abstract class MazeFactoryPrototype:ICloneablePrototype
+    public abstract class MazeFactoryPrototype
     {
         public virtual Maze CreateMaze() => new Maze();
         public virtual Room CreateRoom(int number) => new Room(number);

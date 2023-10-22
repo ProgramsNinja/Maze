@@ -1,5 +1,4 @@
 ﻿using Library;
-using Лаб4;
 
 class Program
 {

@@ -25,6 +25,7 @@ namespace Лаб4
             room2.SetSide(Direction.East, new Wall());
             room2.SetSide(Direction.South, new Wall());
             room2.SetSide(Direction.West, door);
+
             maze.AddRoom(room1);
             maze.AddRoom(room2);
 
