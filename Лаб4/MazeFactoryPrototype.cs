@@ -23,16 +23,16 @@ namespace Лаб4
             _mazeprototype = mazeprototype;
         }
 
-        public override Maze CreateMaze() => _mazeprototype;
+        public override Maze CreateMaze() => _mazeprototype.Clone();
         public override Room CreateRoom(int number)
         {
             if (number < 0)
             {
-                throw new ArgumentOutOfRangeException("number");
+                throw new ArgumentOutOfRangeException("Ожидается положительное число");
             }
             return _roomprototype.Clone();
         }
-        public override Wall CreateWall() => new();
+        public override Wall CreateWall() =>_wallprototype.Clone();
 
         public override Door CreateDoor(Room room1, Room room2)
         {
