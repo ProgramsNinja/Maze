@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Library;
 
-namespace Лаб4
+namespace Лаб5
 {
-    public interface ICloneablePrototype:IMapSite
+    internal class MazeWithBombFactory
     {
-        ICloneablePrototype Clone(); 
     }
 }

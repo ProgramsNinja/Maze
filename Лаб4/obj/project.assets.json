@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/Library.dll": {}
         }
+      },
+      "Лаб1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Лаб1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Лаб1.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../Library/Library.csproj",
       "msbuildProject": "../Library/Library.csproj"
+    },
+    "Лаб1/1.0.0": {
+      "type": "project",
+      "path": "../Лаб1/Лаб1.csproj",
+      "msbuildProject": "../Лаб1/Лаб1.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Library >= 1.0.0"
+      "Library >= 1.0.0",
+      "Лаб1 >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -61,6 +80,9 @@
           "projectReferences": {
             "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Library\\Library.csproj": {
               "projectPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Library\\Library.csproj"
+            },
+            "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб1\\Лаб1.csproj": {
+              "projectPath": "C:\\Users\\dmitr\\OneDrive\\Рабочий стол\\универ\\ООАиП\\Лаб1\\Лаб1\\Лаб1.csproj"
             }
           }
         }
