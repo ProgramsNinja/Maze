@@ -19,5 +19,9 @@ namespace Library
         {
             return _rooms.Single(room => room.roomNumber == number);
         }
+        public virtual Maze Clone()
+        {
+            return (Maze)this.MemberwiseClone();
+        }
     }
 }

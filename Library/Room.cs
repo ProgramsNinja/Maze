@@ -35,5 +35,9 @@ namespace Library
         {
             Console.WriteLine($"Мы вошли в комнату№ {roomNumber}");
         }
+        public virtual Room Clone()
+        {
+            return (Room)this.MemberwiseClone();
+        }
     }
 }

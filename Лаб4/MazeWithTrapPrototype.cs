@@ -9,24 +9,45 @@ namespace Лаб4
 {
     public class MazeWithTrapPrototype : MazeFactoryPrototype
     {
+        private Wall _wallprototype;
+        private RoomWithTrap _roomWithTrapprototype;
+        private Maze _mazeprototype;
+        private DoorWithTrap _doorWithTrapprototype;
 
-        public override Room CreateRoom(int Number)
+        public MazeWithBombPrototype(RoomWithTrap roomWithTrap, DoorWithTrap doorWithTrap, Wall wall, Maze mazeprototype)
         {
-            if (Number <= 0)
+            _wallprototype = wall;
+            _roomWithTrapprototype = roomWithTrap;
+            _mazeprototype = mazeprototype;
+            _doorWithTrapprototype = doorWithTrap;
+        }
+
+        public override Wall CreateWall()
+        {
+            return _wallprototype.Clone();
+        }
+
+        public override RoomWithTrap CreateRoom(int number)
+        {
+            if (number <= 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(Number), Number, "Ожидается положительное число");
+                throw new ArgumentOutOfRangeException(nameof(number), number, "Ожидается положительное число");
             }
-            return new RoomWithTrap(Number);
+            return _roomWithTrapprototype.Clone();
         }
 
-        public override Door CreateDoor(Room room1, Room room2)
+        public override Maze CreateMaze()
         {
-            ArgumentNullException.ThrowIfNull(room1);
-            ArgumentNullException.ThrowIfNull(room2);
-
-            return new DoorWithTrap(room1, room2);
+            return _mazeprototype.Clone();
         }
 
-        public ICloneablePrototype Clone() => (ICloneablePrototype)MemberwiseClone();
+        public override DoorWithTrap CreateDoor(Room room1, Room room2)
+        {
+            if (room1 == null)
+                throw new ArgumentNullException(nameof(room1));
+            if (room2 == null)
+                throw new ArgumentNullException(nameof(room2));
+            return (DoorWithTrap)_doorWithTrapprototype.Clone();
+        }
     }
 }

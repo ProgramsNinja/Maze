@@ -9,20 +9,45 @@ namespace Лаб4
 {
     public class MazeWithBombPrototype : MazeFactoryPrototype
     {
-        public override Wall CreateWall()
+        private WallWithBomb _wallWithBombprototype;
+        private RoomWithBomb _roomWithBombprototype;
+        private Maze _mazeprototype;
+        private Door _doorprototype;
+
+        public MazeWithBombPrototype(RoomWithBomb roomWithBomb, Door door, WallWithBomb wallWithBomb, Maze mazeprototype)
         {
-            return new WallWithBomb();
+            _wallWithBombprototype = wallWithBomb;
+            _roomWithBombprototype = roomWithBomb;
+            _mazeprototype = mazeprototype;
+            _doorprototype = door;
         }
 
-        public override Room CreateRoom(int number)
+        public override WallWithBomb CreateWall()
+        {
+            return _wallWithBombprototype.Clone();
+        }
+
+        public override RoomWithBomb CreateRoom(int number)
         {
             if (number <= 0)
             {
                 throw new ArgumentOutOfRangeException(nameof(number), number, "Ожидается положительное число");
             }
-            return new RoomWithBomb(number);
+            return _roomWithBombprototype.Clone();
         }
 
-        public ICloneablePrototype Clone() => (ICloneablePrototype)MemberwiseClone();
+        public override Maze CreateMaze()
+        {
+            return _mazeprototype.Clone();
+        }
+
+        public override Door CreateDoor(Room room1, Room room2)
+        {
+            if (room1 == null)
+                throw new ArgumentNullException(nameof(room1));
+            if (room2 == null)
+                throw new ArgumentNullException(nameof(room2));
+            return _doorprototype.Clone();
+        }
     }
 }

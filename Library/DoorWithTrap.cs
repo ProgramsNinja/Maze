@@ -17,5 +17,9 @@ namespace Library
                 Console.WriteLine("Мы вошли в дверь");
             }
         }
+        public override Door Clone()
+        {
+            return (DoorWithTrap)this.MemberwiseClone();
+        }
     }
 }

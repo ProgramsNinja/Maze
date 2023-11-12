@@ -21,7 +21,6 @@ namespace Library
             this.room2 = room2;
             isOpen = true;
         }
-
         public void Enter()
         {
             if (isOpen)
@@ -47,6 +46,10 @@ namespace Library
             {
                 throw new ArgumentOutOfRangeException();
             }
+        }
+        public virtual Door Clone()
+        {
+            return (Door)this.MemberwiseClone();
         }
     }
 }

@@ -20,5 +20,9 @@ namespace Library
                 Sides.OfType<WallWithBomb>().ToList().ForEach(x => x.Explode());
             }
         }
+        public virtual RoomWithBomb Clone()
+        {
+            return (RoomWithBomb)this.MemberwiseClone();
+        }
     }
 }

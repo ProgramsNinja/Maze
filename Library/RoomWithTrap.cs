@@ -20,5 +20,9 @@ namespace Library
         {
             Console.WriteLine("Вы попали в ловушку и были возвращены в начало лабиринта.");
         }
+        public virtual RoomWithTrap Clone()
+        {
+            return (RoomWithTrap)this.MemberwiseClone();
+        }
     }
 }

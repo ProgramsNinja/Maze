@@ -29,5 +29,9 @@ namespace Library
                 base.Enter();
             }
         }
+        public virtual WallWithBomb Clone()
+        {
+            return (WallWithBomb)this.MemberwiseClone();
+        }
     }
 }
