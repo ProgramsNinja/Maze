@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Лаб1
 {
-    internal class MazeWithBombFactory:MazeFactory
+    public class MazeWithBombFactory:MazeFactory
     {
         public override Wall CreateWall()
         {
