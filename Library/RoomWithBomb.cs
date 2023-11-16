@@ -10,7 +10,7 @@ namespace Library
     {
         private static Random Rnd = new Random();
         public RoomWithBomb(int number) : base(number) { }
-
+        public RoomWithBomb() { }
         public override void Enter()
         {
             base.Enter();
@@ -20,6 +20,7 @@ namespace Library
                 Sides.OfType<WallWithBomb>().ToList().ForEach(x => x.Explode());
             }
         }
+
         public virtual RoomWithBomb Clone()
         {
             return (RoomWithBomb)this.MemberwiseClone();

@@ -8,8 +8,8 @@ namespace Library
 {
     public class Door : IMapSite
     {
-        private readonly Room room1;
-        private readonly Room room2;
+        private Room _room1 { get; set; }
+        private Room _room2 { get; set; }
         public bool isOpen { get; private init; }
 
         public Door(Room room1, Room room2)
@@ -17,9 +17,17 @@ namespace Library
             ArgumentNullException.ThrowIfNull(room1);
             ArgumentNullException.ThrowIfNull(room2);
 
-            this.room1 = room1;
-            this.room2 = room2;
+            this._room1 = room1;
+            this._room2 = room2;
             isOpen = true;
+        }
+
+        public Door()
+        { }
+        public void Initialize(Room r1, Room r2)
+        {
+            _room1 = r1;
+            _room2 = r2;
         }
         public void Enter()
         {
@@ -34,13 +42,13 @@ namespace Library
         }
         public Room OtherSideFrom(Room room)
         {
-            if (room.roomNumber == room1.roomNumber)
+            if (room.roomNumber == _room1.roomNumber)
             {
-                return room2;
+                return _room2;
             }
-            else if (room.roomNumber == room2.roomNumber)
+            else if (room.roomNumber == _room2.roomNumber)
             {
-                return room1;
+                return _room1;
             }
             else
             {

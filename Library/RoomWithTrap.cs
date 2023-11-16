@@ -10,7 +10,7 @@ namespace Library
     public class RoomWithTrap:Room
     {
         public RoomWithTrap(int Number) : base(Number) { }
-
+        public RoomWithTrap() { }
         public override void Enter()
         {
             Console.WriteLine("Вы вошли в комнату с ловушкой.");

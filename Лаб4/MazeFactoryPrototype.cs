@@ -15,7 +15,7 @@ namespace Лаб4
         private Wall _wallprototype;
         private Maze _mazeprototype;
 
-        public MazeFactoryPrototype(Room roomprototype, Door doorprototype, Wall wallprototype, Maze mazeprototype)
+        protected MazeFactoryPrototype(Room roomprototype, Door doorprototype, Wall wallprototype, Maze mazeprototype)
         {
             _roomprototype = roomprototype;
             _doorprototype = doorprototype;
@@ -23,24 +23,29 @@ namespace Лаб4
             _mazeprototype = mazeprototype;
         }
 
-        public override Maze CreateMaze() => _mazeprototype.Clone();
-        public override Room CreateRoom(int number)
-        {
-            if (number < 0)
-            {
-                throw new ArgumentOutOfRangeException("Ожидается положительное число");
-            }
-            return _roomprototype.Clone();
-        }
-        public override Wall CreateWall() =>_wallprototype.Clone();
+        public MazeFactoryPrototype() : this(new Room(), new Door(), new Wall(), new Maze()){}
 
+        public override Maze CreateMaze() => _mazeprototype.Clone();
+        public override Room CreateRoom(int roomNumber)
+        {
+            Room room = _roomprototype.Clone();
+            if (roomNumber <= 0)
+            {
+                throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
+            }
+            room.Initialize(roomNumber);
+            return room;
+        }
+        public override Wall CreateWall() =>_wallprototype.Clone(); 
         public override Door CreateDoor(Room room1, Room room2)
         {
             if (room1 == null)
                 throw new ArgumentNullException();
             if (room2 == null)
                 throw new ArgumentNullException();
-            return _doorprototype.Clone();
+            Door door = _doorprototype.Clone();
+            door.Initialize(room1, room2);
+            return door;
         }
     }
 }
