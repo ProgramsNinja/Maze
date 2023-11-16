@@ -9,22 +9,23 @@ namespace Лаб4
 {
     public class MazeWithBombPrototype : MazeFactoryPrototype
     {
-        private WallWithBomb _wallWithBombprototype;
-        private RoomWithBomb _roomWithBombprototype;
+        private WallWithBomb _wallprototype;
+        private RoomWithBomb _roomprototype;
         private Maze _mazeprototype;
         private Door _doorprototype;
 
         public MazeWithBombPrototype(RoomWithBomb roomWithBomb, Door door, WallWithBomb wallWithBomb, Maze mazeprototype)
+            : base(door, mazeprototype)
         {
-            _wallWithBombprototype = wallWithBomb;
-            _roomWithBombprototype = roomWithBomb;
+            _wallprototype = wallWithBomb;
+            _roomprototype = roomWithBomb;
             _mazeprototype = mazeprototype;
             _doorprototype = door;
         }
 
         public override WallWithBomb CreateWall()
         {
-            return _wallWithBombprototype.Clone();
+            return _wallprototype.Clone();
         }
 
         public override RoomWithBomb CreateRoom(int number)
@@ -33,7 +34,7 @@ namespace Лаб4
             {
                 throw new ArgumentOutOfRangeException(nameof(number), number, "Ожидается положительное число");
             }
-            return _roomWithBombprototype.Clone();
+            return _roomprototype.Clone();
         }
 
         public override Maze CreateMaze()
