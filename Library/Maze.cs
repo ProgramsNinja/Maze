@@ -21,7 +21,16 @@ namespace Library
         }
         public virtual Maze Clone()
         {
-            return (Maze)this.MemberwiseClone();
+            Maze clonedMaze = (Maze)this.MemberwiseClone();
+            clonedMaze._rooms = new List<Room>(_rooms.Count); 
+
+            foreach (Room room in _rooms)
+            {
+                Room clonedRoom = room.Clone(); 
+                clonedMaze.AddRoom(clonedRoom); 
+            }
+
+            return clonedMaze;
         }
     }
 }
