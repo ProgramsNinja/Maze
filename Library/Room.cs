@@ -8,7 +8,7 @@ namespace Library
 {
     public class Room : IMapSite
     { 
-        protected IMapSite[] Sides { get; private init; }
+        protected IMapSite[] Sides { get;  set; }
         public int roomNumber { get; private set; }
 
         public Room(int roomNo)
@@ -41,7 +41,20 @@ namespace Library
         }
         public virtual Room Clone()
         {
-            return (Room)this.MemberwiseClone();
+            Room clonedRoom = (Room)this.MemberwiseClone();
+            clonedRoom.Sides = new IMapSite[Sides.Length]; 
+
+            
+            for (int i = 0; i < Sides.Length; i++)
+            {
+                if (Sides[i] != null)
+                {
+
+                    clonedRoom.Sides[i] = Sides[i];
+                }
+            }
+
+            return clonedRoom;
         }
     }
 }

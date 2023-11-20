@@ -19,7 +19,12 @@ namespace Library
         }
         public override Door Clone()
         {
-            return (DoorWithTrap)this.MemberwiseClone();
+            DoorWithTrap clonedDoor = (DoorWithTrap)base.Clone(); 
+
+            clonedDoor._room1 = this._room1.Clone();
+            clonedDoor._room2 = this._room2.Clone();
+
+            return clonedDoor;
         }
     }
 }

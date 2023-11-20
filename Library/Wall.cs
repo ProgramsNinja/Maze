@@ -14,7 +14,9 @@ namespace Library
         }
         public virtual Wall Clone()
         {
-            return (Wall)this.MemberwiseClone();
+            Wall clonedWall = new Wall();
+
+            return clonedWall;
         }
     }
 }

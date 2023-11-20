@@ -8,8 +8,8 @@ namespace Library
 {
     public class Door : IMapSite
     {
-        private Room _room1 { get; set; }
-        private Room _room2 { get; set; }
+        protected Room _room1 { get; set; }
+        protected Room _room2 { get; set; }
         public bool isOpen { get; private init; }
 
         public Door(Room room1, Room room2)
@@ -57,7 +57,14 @@ namespace Library
         }
         public virtual Door Clone()
         {
-            return (Door)this.MemberwiseClone();
+            Door clonedDoor = new Door
+            {
+                _room1 = this._room1.Clone(),
+                _room2 = this._room2.Clone(),
+                isOpen = this.isOpen
+            };
+
+            return clonedDoor;
         }
     }
 }
