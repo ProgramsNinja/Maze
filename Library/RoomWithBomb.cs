@@ -24,17 +24,9 @@ namespace Library
         public virtual RoomWithBomb Clone()
         {
             RoomWithBomb clonedRoom = (RoomWithBomb)base.Clone();
-            clonedRoom.Sides = new IMapSite[Sides.Length];
+            RoomWithBomb roomWithBombClone = new RoomWithBomb(roomNumber); 
 
-            for (int i = 0; i < Sides.Length; i++)
-            {
-                if (Sides[i] != null)
-                {
-                    clonedRoom.Sides[i] = Sides[i];
-                }
-            }
-
-            return clonedRoom;
+            return roomWithBombClone;
         }
     }
 }

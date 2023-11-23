@@ -17,12 +17,12 @@ namespace Library
                 Console.WriteLine("Мы вошли в дверь");
             }
         }
-        public override Door Clone()
+        public override IMapSite Clone()
         {
-            DoorWithTrap clonedDoor = (DoorWithTrap)base.Clone(); 
+            DoorWithTrap clonedDoor = (DoorWithTrap)base.Clone();
 
-            clonedDoor._room1 = this._room1.Clone();
-            clonedDoor._room2 = this._room2.Clone();
+            clonedDoor._room1 = (Room)this._room1.Clone();
+            clonedDoor._room2 = (Room)this._room2.Clone();
 
             return clonedDoor;
         }

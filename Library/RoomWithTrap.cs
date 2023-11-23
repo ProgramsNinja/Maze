@@ -22,18 +22,11 @@ namespace Library
         }
         public virtual RoomWithTrap Clone()
         {
+
             RoomWithTrap clonedRoom = (RoomWithTrap)base.Clone();
-            clonedRoom.Sides = new IMapSite[Sides.Length];
+            RoomWithTrap roomWithTrapClone = new RoomWithTrap(roomNumber);
 
-            for (int i = 0; i < Sides.Length; i++)
-            {
-                if (Sides[i] != null)
-                {
-                    clonedRoom.Sides[i] = Sides[i];
-                }
-            }
-
-            return clonedRoom;
+            return roomWithTrapClone;
         }
     }
 }

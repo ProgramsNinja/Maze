@@ -39,18 +39,16 @@ namespace Library
         {
             Console.WriteLine($"Мы вошли в комнату№ {roomNumber}");
         }
-        public virtual Room Clone()
+        public virtual IMapSite Clone()
         {
             Room clonedRoom = (Room)this.MemberwiseClone();
-            clonedRoom.Sides = new IMapSite[Sides.Length]; 
+            clonedRoom.Sides = new IMapSite[Sides.Length];
 
-            
             for (int i = 0; i < Sides.Length; i++)
             {
                 if (Sides[i] != null)
                 {
-
-                    clonedRoom.Sides[i] = Sides[i];
+                    clonedRoom.Sides[i] = Sides[i].Clone();
                 }
             }
 

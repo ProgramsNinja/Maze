@@ -31,10 +31,7 @@ namespace Library
         }
         public virtual WallWithBomb Clone()
         {
-            WallWithBomb clonedWall = (WallWithBomb)base.Clone();
-            clonedWall._isExploded = this._isExploded; 
-
-            return clonedWall;
+            return new WallWithBomb();
         }
     }
 }

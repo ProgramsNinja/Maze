@@ -55,12 +55,12 @@ namespace Library
                 throw new ArgumentOutOfRangeException();
             }
         }
-        public virtual Door Clone()
+        public virtual IMapSite Clone()
         {
             Door clonedDoor = new Door
             {
-                _room1 = this._room1.Clone(),
-                _room2 = this._room2.Clone(),
+                _room1 = (Room)this._room1.Clone(),
+                _room2 = (Room)this._room2.Clone(),
                 isOpen = this.isOpen
             };
 
