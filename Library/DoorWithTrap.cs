@@ -20,10 +20,6 @@ namespace Library
         public override IMapSite Clone()
         {
             DoorWithTrap clonedDoor = (DoorWithTrap)base.Clone();
-
-            clonedDoor._room1 = (Room)this._room1.Clone();
-            clonedDoor._room2 = (Room)this._room2.Clone();
-
             return clonedDoor;
         }
     }

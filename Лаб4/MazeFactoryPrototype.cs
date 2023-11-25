@@ -17,11 +17,10 @@ namespace Лаб4
 
         protected MazeFactoryPrototype(Room roomprototype, Door doorprototype, Wall wallprototype, Maze mazeprototype)
         {
-            if (roomprototype == null || doorprototype == null || wallprototype == null || mazeprototype == null)
-            {
-                throw new ArgumentNullException("Некоторые входные параметры являются нулевыми");
-            }
-
+            ArgumentNullException.ThrowIfNull(roomprototype);
+            ArgumentNullException.ThrowIfNull(doorprototype);
+            ArgumentNullException.ThrowIfNull(wallprototype);
+            ArgumentNullException.ThrowIfNull(mazeprototype);
             _roomprototype = roomprototype;
             _doorprototype = doorprototype;
             _wallprototype = wallprototype;
@@ -33,7 +32,7 @@ namespace Лаб4
         public override Maze CreateMaze() => _mazeprototype.Clone();
         public override Room CreateRoom(int roomNumber)
         {
-            Room room = _roomprototype.Clone();
+            Room room = (Room)_roomprototype.Clone();
             if (roomNumber <= 0)
             {
                 throw new ArgumentOutOfRangeException("Номер комнаты не соответствует условию");
@@ -52,7 +51,7 @@ namespace Лаб4
             {
                 throw new ArgumentNullException();
             }
-            Door door = _doorprototype.Clone();
+            Door door = (Door)_doorprototype.Clone();
             door.Initialize(room1, room2);
             return door;
         }

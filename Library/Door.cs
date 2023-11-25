@@ -8,9 +8,9 @@ namespace Library
 {
     public class Door : IMapSite
     {
-        protected Room _room1 { get; set; }
-        protected Room _room2 { get; set; }
-        public bool isOpen { get; private init; }
+        protected Room _room1;
+        protected Room _room2;
+        public bool isOpen;
 
         public Door(Room room1, Room room2)
         {
